@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require 'time'
+
 class Account
+
   attr_reader :balance, :transactions
 
   def initialize(balance = 0.00, statement = Statement, transaction = Transaction)
@@ -26,7 +28,8 @@ class Account
   end
 
   def print_statement
-    "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00"
+    account_statement = @statement.new
+    account_statement.print(@transactions)
   end
 
   private

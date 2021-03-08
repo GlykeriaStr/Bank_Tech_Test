@@ -3,7 +3,7 @@
 require 'account'
 
 describe Account do
-  let(:statement) { double :statement }
+  let(:statement) { double :statement, print: printed_statement }
   let(:statement_class) { double :statement_class, new: statement}
   let(:transaction) { double :transaction }
   let(:transaction_class) { double :transaction_class, new: transaction}
