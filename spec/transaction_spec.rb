@@ -6,7 +6,11 @@ describe Transaction do
   let(:credit) { 10 }
   let(:balance) { 10.00 }
 
-  it 'creates a transaction when the user does a deposit' do
+  it 'shows the date a transaction was made' do
     expect(transaction.date).to eq(Date.today.strftime("%d/%m/%y"))
+  end
+
+  it 'shows the type of the transaction' do
+    expect(transaction.type).to eq(credit)
   end
 end
