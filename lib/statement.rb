@@ -9,11 +9,11 @@ class Statement
   end
 
   def transaction_list(list)
-    list.reverse.each do |t|
-      if t.type == :credit
-        puts "#{t.date} || #{format(t.value)} || || #{format(t.balance)}"
+    list.reverse.each do |tr|
+      if tr.type == :credit
+        puts "#{tr.date} || #{format(tr.value)} || || #{format(tr.balance)}"
       else
-        puts "#{t.date} || || #{format(t.value)} || #{format(t.balance)}"
+        puts "#{tr.date} || || #{format(tr.value)} || #{format(tr.balance)}"
       end
     end
   end
