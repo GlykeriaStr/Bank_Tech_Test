@@ -27,6 +27,10 @@ describe Account do
       expect(account.balance).to eq(10.00)
     end
 
+    it 'changes the balance' do
+      expect { account.deposit(10) }.to change { account.balance }.by(+10)
+    end
+
     it 'creates a transaction when user makes deposit' do
       account.deposit(10)
       expect(account.transactions[0]).to eq(transaction)
