@@ -1,3 +1,4 @@
+require "time"
 class Account
 
 attr_reader :balance
@@ -5,18 +6,20 @@ attr_reader :balance
   def initialize(balance = 0.00, statement = Statement, transaction = Transaction)
     @balance = balance
     @statement = statement
-    @transaction = []
+    @transaction = transaction
   end
 
   def deposit(amount)
     negative_amount(amount)
     @balance += amount
+    @transaction.new(date: Date.today.strftime("%d/%m/%y"), type: :credit, balance: @balance)
   end
 
   def withdraw(amount)
     negative_amount(amount)
     raise 'There are insufficient funds in your account.' unless @balance > amount
     @balance -= amount
+    @transaction.new(date: Date.today.strftime("%d/%m/%y"), type: :debit, balance: @balance)
   end
 
   def print_statement
