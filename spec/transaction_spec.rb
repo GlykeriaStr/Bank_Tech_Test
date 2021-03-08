@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'transaction'
 
 describe Transaction do
-  let(:date) { Date.new(1990, 3, 17)}
+  let(:date) { Date.new(1990, 3, 17) }
   subject(:transaction) { described_class.new(date: date, type: :credit, value: 10, balance: 10.00) }
 
   it 'creates an instance of Transaction' do

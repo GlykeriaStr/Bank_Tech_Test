@@ -1,7 +1,8 @@
-require "time"
-class Account
+# frozen_string_literal: true
 
-attr_reader :balance, :transaction
+require 'time'
+class Account
+  attr_reader :balance
 
   def initialize(balance = 0.00, statement = Statement, transaction = Transaction)
     @balance = balance
@@ -12,14 +13,15 @@ attr_reader :balance, :transaction
   def deposit(amount)
     negative_amount(amount)
     @balance += amount
-    @transaction.new(date: Date.today.strftime("%d/%m/%y"), type: :credit, value: amount, balance: @balance)
+    @transaction.new(date: Date.today.strftime('%d/%m/%y'), type: :credit, value: amount, balance: @balance)
   end
 
   def withdraw(amount)
     negative_amount(amount)
     raise 'There are insufficient funds in your account.' unless @balance > amount
+
     @balance -= amount
-    @transaction.new(date: Date.today.strftime("%d/%m/%y"), type: :debit, value: amount, balance: @balance)
+    @transaction.new(date: Date.today.strftime('%d/%m/%y'), type: :debit, value: amount, balance: @balance)
   end
 
   def print_statement
@@ -29,6 +31,6 @@ attr_reader :balance, :transaction
   private
 
   def negative_amount(amount)
-    raise 'Please enter a positive amount.' if amount < 0
+    raise 'Please enter a positive amount.' if amount.negative?
   end
 end

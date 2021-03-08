@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'account'
 
 describe Account do
@@ -22,22 +24,22 @@ describe Account do
     end
 
     it 'throws an error if you add negative amount' do
-      expect{ account.deposit(-10) }.to raise_error('Please enter a positive amount.')
+      expect { account.deposit(-10) }.to raise_error('Please enter a positive amount.')
     end
   end
 
   describe '#withdraw' do
     it 'lets you withdraw' do
       account.deposit(10)
-      expect{ account.withdraw(5) }.to change{ account.balance }.by(-5)
+      expect { account.withdraw(5) }.to change { account.balance }.by(-5)
     end
 
     it 'throws an error when there are insufficient funds in the account' do
-      expect{ account.withdraw(5) }.to raise_error('There are insufficient funds in your account.')
+      expect { account.withdraw(5) }.to raise_error('There are insufficient funds in your account.')
     end
 
     it 'throws an error if you withdraw negative amount' do
-      expect{ account.withdraw(-10) }.to raise_error('Please enter a positive amount.')
+      expect { account.withdraw(-10) }.to raise_error('Please enter a positive amount.')
     end
   end
 
