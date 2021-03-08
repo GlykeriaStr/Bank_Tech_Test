@@ -15,9 +15,15 @@ describe Account do
     end
   end
 
-  it 'lets you make a deposit' do
-    account.deposit(10)
-    expect(account.balance).to eq(10.00)
+  describe '#deposit' do
+    it 'lets you make a deposit' do
+      account.deposit(10)
+      expect(account.balance).to eq(10.00)
+    end
+
+    it 'throws an error if you add negative amount' do
+      expect{ account.deposit(-10) }.to raise_error('Please enter a positive amount.')
+    end
   end
 
   describe '#withdraw' do

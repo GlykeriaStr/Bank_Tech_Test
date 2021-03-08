@@ -8,6 +8,7 @@ attr_reader :balance
   end
 
   def deposit(amount)
+    raise 'Please enter a positive amount.' if amount < 0
     @balance += amount
   end
 
