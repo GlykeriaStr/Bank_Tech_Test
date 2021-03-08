@@ -36,6 +36,10 @@ class Account
   end
 
   def create_transaction(type, amount)
-    @transaction.new(date: Date.today.strftime('%d/%m/%y'), type: type, value: amount, balance: @balance)
+    @transaction.new(date: date, type: type, value: amount, balance: @balance)
+  end
+
+  def date
+    Date.today.strftime('%d/%m/%y')
   end
 end
