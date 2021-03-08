@@ -2,6 +2,7 @@ require 'account'
 
 describe Account do
   subject(:account) { described_class.new }
+  let(:printed_statement) { "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00" }
 
   it 'starts with 0 balance' do
     expect(account.balance).to eq(0)
@@ -21,5 +22,10 @@ describe Account do
     it 'throws an error when there are insufficient funds in the account' do
       expect{ account.withdraw(5) }.to raise_error('There are insufficient funds in your account.')
     end
+  end
+
+  it 'prints a bank statement' do
+    account.deposit(10)
+    expect(account.print_statement).to eq printed_statement
   end
 end
