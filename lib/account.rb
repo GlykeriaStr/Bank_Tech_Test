@@ -8,12 +8,13 @@ class Account
     @balance = balance
     @statement = statement
     @transaction = transaction
+    @transactions = []
   end
 
   def deposit(amount)
     negative_amount(amount)
     @balance += amount
-    @transaction.new(date: Date.today.strftime('%d/%m/%y'), type: :credit, value: amount, balance: @balance)
+    @transactions << create_transaction(:credit, amount)
   end
 
   def withdraw(amount)
@@ -21,16 +22,20 @@ class Account
     raise 'There are insufficient funds in your account.' unless @balance > amount
 
     @balance -= amount
-    @transaction.new(date: Date.today.strftime('%d/%m/%y'), type: :debit, value: amount, balance: @balance)
+    @transactions << create_transaction(:debit, amount)
   end
 
   def print_statement
-    "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00"
+     "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00"
   end
 
   private
 
   def negative_amount(amount)
     raise 'Please enter a positive amount.' if amount.negative?
+  end
+
+  def create_transaction(type, amount)
+    @transaction.new(date: Date.today.strftime('%d/%m/%y'), type: type, value: amount, balance: @balance)
   end
 end

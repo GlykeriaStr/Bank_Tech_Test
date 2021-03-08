@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/glykeriastravodimou/MakersAcademy/Bank_Tech_Test/spec/account_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -55,12 +57,14 @@
       },
       "/Users/glykeriastravodimou/MakersAcademy/Bank_Tech_Test/lib/account.rb": {
         "lines": [
+          null,
+          null,
+          1,
           1,
           1,
           null,
           1,
-          null,
-          1,
+          8,
           8,
           8,
           8,
@@ -75,6 +79,7 @@
           1,
           3,
           2,
+          null,
           1,
           1,
           null,
@@ -88,29 +93,36 @@
           1,
           7,
           null,
+          null,
+          1,
+          4,
+          null,
           null
         ]
       },
       "/Users/glykeriastravodimou/MakersAcademy/Bank_Tech_Test/spec/statement_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           null
         ]
       },
       "/Users/glykeriastravodimou/MakersAcademy/Bank_Tech_Test/lib/statement.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
-          null,
+          1,
           null
         ]
       },
       "/Users/glykeriastravodimou/MakersAcademy/Bank_Tech_Test/spec/transaction_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -129,10 +141,12 @@
       },
       "/Users/glykeriastravodimou/MakersAcademy/Bank_Tech_Test/lib/transaction.rb": {
         "lines": [
+          null,
+          null,
+          1,
           1,
           1,
           null,
-          1,
           1,
           5,
           5,
@@ -143,6 +157,6 @@
         ]
       }
     },
-    "timestamp": 1615223922
+    "timestamp": 1615225570
   }
 }
