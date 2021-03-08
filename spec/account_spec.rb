@@ -16,4 +16,8 @@ describe Account do
     account.deposit(10)
     expect{ account.withdraw(5) }.to change{ account.balance }.by(-5)
   end
+
+  it 'throws an error when there are insufficient funds in the account' do
+    expect{ account.withdraw(5) }.to raise_error('There are insufficient funds in your account.')
+  end
 end
