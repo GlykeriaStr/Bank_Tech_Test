@@ -2,9 +2,10 @@ class Account
 
 attr_reader :balance
 
-  def initialize(balance = 0.00, statement = Statement)
+  def initialize(balance = 0.00, statement = Statement, transaction = Transaction)
     @balance = balance
     @statement = statement
+    @transaction = []
   end
 
   def deposit(amount)
