@@ -35,6 +35,10 @@ describe Account do
     it 'throws an error when there are insufficient funds in the account' do
       expect{ account.withdraw(5) }.to raise_error('There are insufficient funds in your account.')
     end
+
+    it 'throws an error if you withdraw negative amount' do
+      expect{ account.withdraw(-10) }.to raise_error('Please enter a positive amount.')
+    end
   end
 
   it 'prints a bank statement' do

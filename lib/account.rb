@@ -13,6 +13,7 @@ attr_reader :balance
   end
 
   def withdraw(amount)
+    raise 'Please enter a positive amount.' if amount < 0
     raise 'There are insufficient funds in your account.' unless @balance > amount
     @balance -= amount
   end
