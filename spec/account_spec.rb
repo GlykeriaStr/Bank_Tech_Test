@@ -11,4 +11,9 @@ describe Account do
     account.deposit(10)
     expect(account.balance).to eq(10)
   end
+
+  it 'lets you withdraw' do
+    account.deposit(10)
+    expect{ account.withdraw(5) }.to change{ account.balance }.by(-5)
+  end
 end
