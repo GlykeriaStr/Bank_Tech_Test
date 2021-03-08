@@ -4,8 +4,15 @@ describe Account do
   subject(:account) { described_class.new }
   let(:printed_statement) { "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00" }
 
-  it 'starts with 0 balance' do
-    expect(account.balance).to eq(0)
+  describe '#balance' do
+    it 'starts with 0 balance' do
+      expect(account.balance).to eq(0)
+    end
+
+    it 'can be initialized with any amount' do
+      account2 = Account.new(30.5)
+      expect(account2.balance).to eq(30.50)
+    end
   end
 
   it 'lets you make a deposit' do

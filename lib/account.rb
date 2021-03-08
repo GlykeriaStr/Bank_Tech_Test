@@ -2,8 +2,8 @@ class Account
 
 attr_reader :balance
 
-  def initialize(statement = Statement)
-    @balance = 0.00
+  def initialize(balance = 0.00, statement = Statement)
+    @balance = balance
     @statement = statement
   end
 
