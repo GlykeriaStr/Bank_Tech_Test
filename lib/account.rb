@@ -2,7 +2,7 @@
 
 require 'time'
 class Account
-  attr_reader :balance
+  attr_reader :balance, :transactions
 
   def initialize(balance = 0.00, statement = Statement, transaction = Transaction)
     @balance = balance
@@ -26,7 +26,7 @@ class Account
   end
 
   def print_statement
-     "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00"
+    "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00"
   end
 
   private
