@@ -65,13 +65,20 @@ describe Account do
       expect { account.withdraw(-10) }.to raise_error('Please enter a positive amount.')
     end
 
-    it 'throws an error if you dont add anything' do
+    it 'throws an error if you add nil' do
       expect { account.withdraw(nil) }.to raise_error('Please enter a positive amount.')
     end
   end
 
-  it 'prints a bank statement' do
-    account.deposit(10)
-    expect(account.print_statement).to eq(printed_statement)
+  describe '#print_statement' do
+    it 'prints a bank statement' do
+      account.deposit(10)
+      expect(account.print_statement).to eq(printed_statement)
+    end
+
+    it 'shows no transaction when none were made' do
+      expect{ account.print_statement }.to raise_error('There are no transactions')
+    end
+
   end
 end

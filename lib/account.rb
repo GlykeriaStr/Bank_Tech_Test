@@ -29,6 +29,7 @@ class Account
   end
 
   def print_statement
+    raise 'There are no transactions' if @transactions.empty?
     account_statement = @statement.new
     account_statement.print(@transactions)
   end
