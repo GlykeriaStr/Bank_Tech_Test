@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Statement
-  HEADER = "date || credit || debit || balance"
+  HEADER = 'date || credit || debit || balance'
 
   def print(transactions)
     puts HEADER

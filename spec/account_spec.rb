@@ -4,9 +4,9 @@ require 'account'
 
 describe Account do
   let(:statement) { double :statement, print: printed_statement }
-  let(:statement_class) { double :statement_class, new: statement}
+  let(:statement_class) { double :statement_class, new: statement }
   let(:transaction) { double :transaction }
-  let(:transaction_class) { double :transaction_class, new: transaction}
+  let(:transaction_class) { double :transaction_class, new: transaction }
   subject(:account) { described_class.new(0, statement_class, transaction_class) }
   let(:printed_statement) { "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00" }
 

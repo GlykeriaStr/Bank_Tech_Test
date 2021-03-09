@@ -60,6 +60,10 @@ I want to see my balance after every transaction on my account statement
 
  ![table3](screenshots/class_action.png)
 
+## Example of the code running in IRB
+
+![example](screenshots/example.png)
+
 ## Coverage
 
 * 16 tests , all passing, 100% coverage.

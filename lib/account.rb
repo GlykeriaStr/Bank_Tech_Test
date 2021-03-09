@@ -1,10 +1,10 @@
 # frozen_string_literal: true
+
 require './lib/statement'
 require './lib/transaction'
 require 'time'
 
 class Account
-
   attr_reader :balance, :transactions
 
   def initialize(balance = 0.00, statement = Statement, transaction = Transaction)
@@ -36,7 +36,7 @@ class Account
   private
 
   def positive_amount(amount)
-    raise 'Please enter a positive amount.' unless amount.is_a?(Integer) && amount > 0
+    raise 'Please enter a positive amount.' unless amount.is_a?(Integer) && amount.positive?
   end
 
   def create_transaction(type, amount)

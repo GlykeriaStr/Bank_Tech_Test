@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'time'
 
 describe 'Acceptance Criteria' do
@@ -20,6 +22,6 @@ describe 'Acceptance Criteria' do
     account.deposit(2000)
     allow(Date).to receive(:today) { day3 }
     account.withdraw(500)
-    expect{ account.print_statement }.to output(example_statement).to_stdout
+    expect { account.print_statement }.to output(example_statement).to_stdout
   end
 end
