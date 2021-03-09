@@ -43,6 +43,6 @@ class Account
   end
 
   def date
-    Date.today.strftime('%d/%m/%y')
+    Date.today.strftime('%d/%m/%Y')
   end
 end
