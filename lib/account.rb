@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-
+require './lib/statement'
+require './lib/transaction'
 require 'time'
 
 class Account
@@ -14,13 +15,13 @@ class Account
   end
 
   def deposit(amount)
-    negative_amount(amount)
+    positive_amount(amount)
     @balance += amount
     @transactions << create_transaction(:credit, amount)
   end
 
   def withdraw(amount)
-    negative_amount(amount)
+    positive_amount(amount)
     raise 'There are insufficient funds in your account.' unless @balance > amount
 
     @balance -= amount
@@ -34,8 +35,8 @@ class Account
 
   private
 
-  def negative_amount(amount)
-    raise 'Please enter a positive amount.' if amount.negative?
+  def positive_amount(amount)
+    raise 'Please enter a positive amount.' unless amount.is_a?(Integer) && amount > 0
   end
 
   def create_transaction(type, amount)

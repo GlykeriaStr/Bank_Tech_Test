@@ -39,6 +39,10 @@ describe Account do
     it 'throws an error if you add negative amount' do
       expect { account.deposit(-10) }.to raise_error('Please enter a positive amount.')
     end
+
+    it 'throws an error if you dont add anything' do
+      expect { account.deposit(nil) }.to raise_error('Please enter a positive amount.')
+    end
   end
 
   describe '#withdraw' do
@@ -59,6 +63,10 @@ describe Account do
 
     it 'throws an error if you withdraw negative amount' do
       expect { account.withdraw(-10) }.to raise_error('Please enter a positive amount.')
+    end
+
+    it 'throws an error if you dont add anything' do
+      expect { account.withdraw(nil) }.to raise_error('Please enter a positive amount.')
     end
   end
 

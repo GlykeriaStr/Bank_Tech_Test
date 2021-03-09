@@ -1,37 +1,67 @@
 # Bank tech test
 
-Today, you'll practice doing a tech test.
+This test is for practicing OO desing and TDD skills as well as producing a clean code.
 
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
+## How to run
 
-You'll get to practice your OO design and TDD skills.
+* Clone this repo
+* Bundle install
+* There are two ways of running this project:
+    1. Open IRB and require `./lib/account`
+      * `account = Account.new `
+      * `account.deposit(100)`
+      * `account.withdraw(50)`
+      * `account.print_statement`
+    2. `ruby bank.rb`
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+## Planning
 
-## Specification
-
-### Requirements
-
-* You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
-* Deposits, withdrawal.
-* Account statement (date, amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
-
-### Acceptance criteria
-
-**Given** a client makes a deposit of 1000 on 10-01-2012  
-**And** a deposit of 2000 on 13-01-2012  
-**And** a withdrawal of 500 on 14-01-2012  
-**When** she prints her bank statement  
-**Then** she would see
-
+* I started by creating user stories.
 ```
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+As a client
+So I can put money in my account
+I want to be able to deposit
 ```
+```
+As a client
+So I can take money out of my account
+I want to be able to withdraw
+```
+```
+As a client
+So I can see how much money I have
+I want to print an account statement
+```
+```
+As a client
+So i know when i did what
+I want to see the dates on my account statement
+```
+```
+As a client
+So i know when i withdrew
+I want to see the date and the amount I withdrew on my account statement
+```
+```
+As a client
+So i know when i deposited
+I want to see the date and the amount I credited on my account statement
+```
+```
+As a client
+So I know how much money I have in my account
+I want to see my balance after every transaction on my account statement
+```
+* Organised them in tables to plan how I will structure my code.
 
-## Self-assessment
+ ![table1](screenshots/nouns_verbs.png)
 
-Once you have completed the challenge and feel happy with your solution, here's a form to help you reflect on the quality of your code: https://docs.google.com/forms/d/1Q-NnqVObbGLDHxlvbUfeAC7yBCf3eCjTmz6GOqC9Aeo/edit
+ ![table2](screenshots/owner_property.png)
+
+ ![table3](screenshots/class_action.png)
+
+## Coverage
+
+* 16 tests , all passing, 100% coverage.
+
+![coverage](screenshots/coverage.png)
