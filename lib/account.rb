@@ -7,7 +7,7 @@ require 'time'
 class Account
   attr_reader :balance, :transactions
 
-  def initialize(balance = 0.00, statement = Statement, transaction = Transaction)
+  def initialize(balance = 0, statement = Statement, transaction = Transaction)
     @balance = balance
     @statement = statement
     @transaction = transaction
