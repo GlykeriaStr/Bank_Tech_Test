@@ -4,7 +4,7 @@ require 'time'
 class Transaction
   attr_reader :date, :type, :value, :balance
 
-  def initialize(type:, value:, balance:, date: Date.today.strftime('%d/%m/%y'))
+  def initialize(date:, type:, value:, balance:)
     @date = date
     @type = type
     @value = value
