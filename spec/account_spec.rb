@@ -8,6 +8,7 @@ describe Account do
   let(:transaction) { double :transaction }
   let(:transaction_class) { double :transaction_class, new: transaction }
   subject(:account) { described_class.new(0, statement_class, transaction_class) }
+  let(:date) { Date.new(2021, 3, 8)}
   let(:printed_statement) { "date || credit || debit || balance\n8/3/2021 || 10.00 || || 10.00" }
 
   describe '#balance' do
@@ -72,6 +73,7 @@ describe Account do
 
   describe '#print_statement' do
     it 'prints a bank statement' do
+      allow(Date).to receive(:today) { date }
       account.deposit(10)
       expect(account.print_statement).to eq(printed_statement)
     end
