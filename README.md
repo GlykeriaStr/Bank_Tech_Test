@@ -1,6 +1,6 @@
 # Bank tech test
 
-This test is for practicing OO desing and TDD skills as well as producing a clean code.
+This test is for practicing OO design and TDD skills as well as producing a clean code.
 
 ## How to run
 
@@ -66,6 +66,6 @@ I want to see my balance after every transaction on my account statement
 
 ## Coverage
 
-* 16 tests , all passing, 100% coverage.
+* 17 tests , all passing, 100% coverage.
 
 ![coverage](screenshots/coverage.png)

@@ -222,7 +222,7 @@
       "/Users/glykeriastravodimou/MakersAcademy/Bank_Tech_Test/spec/statement_spec.rb": {
         "lines": [
           null,
-          null,
+          1,
           1,
           null,
           1,
@@ -230,7 +230,11 @@
           2,
           2,
           2,
+          2,
+          2,
           null,
+          1,
+          1,
           1,
           1,
           1,
@@ -260,6 +264,6 @@
         ]
       }
     },
-    "timestamp": 1615298237
+    "timestamp": 1615543401
   }
 }
